@@ -16,7 +16,8 @@ class UserClubController extends Controller
      */
     public function index()
     {
-        return UserClubResourse::collection(UserClub::all());
+        $data = UserClub::all();
+        return response() -> json($data);
     }
 
     /**

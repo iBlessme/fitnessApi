@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Hall extends Model
 {
-    use HasFactory;
-    public function types_of_traning(): HasMany{
+
+    public function typesOfTraning(): HasMany{
         return $this->hasMany(TypesOfTraning::class);
     }
-
+    use HasFactory;
 }

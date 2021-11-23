@@ -16,7 +16,8 @@ class TypesOfInventoryController extends Controller
      */
     public function index()
     {
-        return TypesOfInventoryResourse::collection(TypesOfInventory::all());
+        $data = TypesOfInventory::all();
+        return response() -> json($data);
     }
 
     /**

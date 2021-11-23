@@ -16,7 +16,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return ClientResourse::collection(Client::all());
+        $data = Client::all();
+        return response() -> json($data);
     }
 
     /**

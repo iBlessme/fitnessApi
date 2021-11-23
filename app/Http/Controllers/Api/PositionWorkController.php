@@ -16,7 +16,8 @@ class PositionWorkController extends Controller
      */
     public function index()
     {
-        return PositionWorkResourse::collection(PositionWork::all());
+        $data = PositionWork::all();
+        return response() -> json($data);
     }
 
     /**

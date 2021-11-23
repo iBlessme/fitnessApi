@@ -17,9 +17,9 @@ class BonusProgrammController extends Controller
      */
     public function index()
     {
-        return BonusProgramResourse::collection(BonusProgramm::all());
-//        $data = BonusProgramm::all();
-//        return response() -> json($data);
+//        return BonusProgramResourse::collection(BonusProgramm::all());
+        $data = BonusProgramm::all();
+        return response() -> json($data);
     }
 
     /**

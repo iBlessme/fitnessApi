@@ -32,7 +32,6 @@ use App\Http\Controllers\Api\AbonementController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-//Route::get('/bonus_programms', [BonusProgrammController::class, 'index']);
 
 Route::apiResources([
     "/client"=>ClientController::class,

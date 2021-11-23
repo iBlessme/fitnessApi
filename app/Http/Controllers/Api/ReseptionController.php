@@ -16,7 +16,8 @@ class ReseptionController extends Controller
      */
     public function index()
     {
-        return ReseptionResourse::collection(Reseption::all());
+        $data = Reseption::all();
+        return response() -> json($data);
     }
 
     /**

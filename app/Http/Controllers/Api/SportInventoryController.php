@@ -16,7 +16,8 @@ class SportInventoryController extends Controller
      */
     public function index()
     {
-        return SportInventoryResourse::collection(SportInventory::all());
+        $data = SportInventory::all();
+        return response() -> json($data);
     }
 
     /**

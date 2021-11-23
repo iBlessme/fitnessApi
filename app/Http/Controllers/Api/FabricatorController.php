@@ -16,7 +16,8 @@ class FabricatorController extends Controller
      */
     public function index()
     {
-        return FabricatorResourse::collection(Fabricator::all());
+        $data = Fabricator::all();
+        return response() -> json($data);
     }
 
     /**

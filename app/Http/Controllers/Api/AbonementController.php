@@ -16,7 +16,9 @@ class AbonementController extends Controller
      */
     public function index()
     {
-        return AbonementResourse::collection(Abonement::all());
+        $data = Abonement::all();
+        return response() -> json($data);
+//        return AbonementResourse::collection(Abonement::all());
     }
 
     /**

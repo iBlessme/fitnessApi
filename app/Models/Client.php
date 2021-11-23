@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Client extends Model
 {
     use HasFactory;
+    protected $table = "clients";
     public function abonement(): HasMany{
         return $this->hasMany(Abonement::class);
     }

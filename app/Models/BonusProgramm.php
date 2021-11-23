@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class BonusProgramm extends Model
 {
+    protected $table = 'bonus_programms';
+    protected $fillable = [
+        'name_programm',
+        'cost'
+    ];
     use HasFactory;
-    public function abonement()
-    {
-        return $this->hasMany(Abonement::class);
-    }
+
 
 }

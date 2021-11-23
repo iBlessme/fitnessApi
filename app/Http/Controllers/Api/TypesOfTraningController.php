@@ -16,7 +16,8 @@ class TypesOfTraningController extends Controller
      */
     public function index()
     {
-       return TypesOfTraningResourse::collection(TypesOfTraning::all());
+        $data = TypesOfTraning::all();
+        return response() -> json($data);
     }
 
     /**

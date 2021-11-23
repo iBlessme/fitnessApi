@@ -16,7 +16,8 @@ class HallsController extends Controller
      */
     public function index()
     {
-        return HallResourse::collection(Hall::all());
+        $data = Hall::all();
+        return response() -> json($data);
     }
 
     /**

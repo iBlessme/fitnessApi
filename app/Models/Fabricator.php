@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fabricator extends Model
 {
+    protected $table = 'fabricators';
+    protected $fillable = [
+        'name_fabricator',
+        'cost_country'
+    ];
     use HasFactory;
 }

@@ -16,7 +16,8 @@ class WorkerController extends Controller
      */
     public function index()
     {
-        return WorkerResourse::collection(Worker::all());
+        $data = Worker::all();
+        return response() -> json($data);
     }
 
     /**

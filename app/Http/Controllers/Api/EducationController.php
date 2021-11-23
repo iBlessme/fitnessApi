@@ -16,7 +16,8 @@ class EducationController extends Controller
      */
     public function index()
     {
-        return EducationResourse::collection(Education::all());
+        $data = Education::all();
+        return response() -> json($data);
     }
 
     /**
