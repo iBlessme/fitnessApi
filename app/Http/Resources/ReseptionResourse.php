@@ -14,7 +14,7 @@ class ReseptionResourse extends JsonResource
 
 
 
-            'sport_inventories' => SportInventoryResourse::collection($this->sport_inventorie),
+            'sport_inventories' => SportInventoryResourse::collection($this->sportInventorie),
             'workers' => WorkerResourse::collection($this->worker),
             'clients' => ClientResourse::collection($this->client),
 

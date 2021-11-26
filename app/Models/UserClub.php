@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserClub extends Model
 {
     protected $table = 'user_clubs';
-    protected $primaryKey = 'id_user_club';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'name_user',
         'surname',

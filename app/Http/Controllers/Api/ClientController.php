@@ -16,7 +16,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $data = Client::all();
+        $data = Client::with(['abonement', 'userClub'])->get();
         return response() -> json($data);
     }
 

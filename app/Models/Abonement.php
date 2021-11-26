@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Abonement extends Model
 {
     protected $table = 'abonements';
-    protected $primaryKey = 'id_abonement';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'name_abonement',
         'cost_abonement',
@@ -17,6 +17,10 @@ class Abonement extends Model
         'date_finish'
     ];
     use HasFactory;
+
+    public function clients(){
+        return $this->hasMany(Client::class);
+    }
 
     public function bonus(){
         return $this -> hasMany(BonusProgramm::class);

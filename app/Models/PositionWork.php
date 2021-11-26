@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PositionWork extends Model
 {
     protected $table = 'position_works';
-    protected $primaryKey = 'id_position_work';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'name_position'
     ];

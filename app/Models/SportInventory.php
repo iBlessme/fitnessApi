@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class SportInventory extends Model
 {
     protected $table = 'sport_inventories';
-    protected $primaryKey = 'id_sport_inventory';
+    protected $primaryKey = 'id';
     protected $fillable = [
     ];
     use HasFactory;

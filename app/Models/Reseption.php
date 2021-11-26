@@ -9,10 +9,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Reseption extends Model
 {
     protected $table = 'reseptions';
-    protected $primaryKey = 'id_reseption';
-    protected $fillable = [
+    protected $primaryKey = 'id';
 
-    ];
     use HasFactory;
     public function sportInventorie(): HasMany{
         return $this->hasMany(SportInventory::class);

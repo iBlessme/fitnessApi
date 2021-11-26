@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Fabricator extends Model
 {
     protected $table = 'fabricators';
-    protected $primaryKey = 'id_fabricator';
+    protected $primaryKey = 'id';
     protected $fillable = [
         'name_fabricator',
         'cost_country'
