@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Abonement extends Model
 {
     protected $table = 'abonements';
+    protected $primaryKey = 'id_abonement';
     protected $fillable = [
         'name_abonement',
         'cost_abonement',

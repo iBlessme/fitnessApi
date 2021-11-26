@@ -10,6 +10,7 @@ class Education extends Model
 {
     use HasFactory;
     protected $table = "educations";
+    protected $primaryKey = 'id_education';
     public function worker(): HasMany{
     return $this->hasMany(Worker::class);
 }

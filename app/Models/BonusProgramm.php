@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class BonusProgramm extends Model
 {
     protected $table = 'bonus_programms';
+    protected $primaryKey = 'id_bonus_programm';
     protected $fillable = [
         'name_programm',
         'cost'

@@ -10,6 +10,7 @@ class Client extends Model
 {
     use HasFactory;
     protected $table = "clients";
+    protected $primaryKey = 'id_client';
     public function abonement(): HasMany{
         return $this->hasMany(Abonement::class);
     }

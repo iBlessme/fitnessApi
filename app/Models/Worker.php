@@ -8,11 +8,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Worker extends Model
 {
+    protected $table = 'workers';
+    protected $primaryKey = 'id_worker';
+    protected $fillable = [
+        'salary'
+    ];
     use HasFactory;
-    public function position_work(): HasMany{
+    public function positionWork(): HasMany{
         return $this->hasMany(PositionWork::class);
     }
-    public function user_club(): HasMany{
+    public function userClub(): HasMany{
         return $this->hasMany(UserClub::class);
     }
 }

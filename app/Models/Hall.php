@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Hall extends Model
 {
-
+    protected $table = 'halls';
+    protected $primaryKey = 'id_hall';
+    protected $fillable = [
+        'name_hall',
+        'capacity'
+    ];
     public function typesOfTraning(): HasMany{
         return $this->hasMany(TypesOfTraning::class);
     }

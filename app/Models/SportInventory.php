@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class SportInventory extends Model
 {
+    protected $table = 'sport_inventories';
+    protected $primaryKey = 'id_sport_inventory';
+    protected $fillable = [
+    ];
     use HasFactory;
-    public function types_of_inventorie(): HasMany{
+    public function typesOfInventorie(): HasMany{
         return $this->hasMany(TypesOfInventory::class);
     }
     public function hall(): HasMany{
