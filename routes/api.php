@@ -33,22 +33,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::apiResources([
-//    "/client"=>ClientController::class,
-//
-//    "/types_of_traning"=>TypesOfTraningController::class,
-//    "/user_club"=>UserClubController::class,
-//    "/bonus_programm"=>BonusProgrammController::class,
-//    "/education"=>EducationController::class,
-//    "/fabricator"=>FabricatorController::class,
-//    "/hall"=>HallsController::class,
-//    "/position_work"=>PositionWorkController::class,
-//    "/reseption"=>ReseptionController::class,
-//    "/sport_inventory"=>SportInventoryController::class,
-//    "/types_of_inventory"=>TypesOfInventoryController::class,
-//    "/worker"=>WorkerController::class,
-//    "/abonement"=>AbonementController::class
-//]);
 Route::get('/abonement',[ AbonementController::class, 'index']);
 Route::post('/abonement', [AbonementController::class, 'create']);
 Route::get('/bonus_programm',[ BonusProgrammController::class, 'index']);

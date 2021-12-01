@@ -27,6 +27,7 @@ class CreateUserClubsTable extends Migration
             $table->date('birth_day');
             $table->timestamps();
         });
+
     }
 
     /**

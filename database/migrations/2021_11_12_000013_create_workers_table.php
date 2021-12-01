@@ -22,6 +22,12 @@ class CreateWorkersTable extends Migration
 
             $table->timestamps();
         });
+//        Schema::table('workers', function ($table){
+//           $table->string('api_token', 80)->after('password')
+//               ->unique()
+//               ->nullable()
+//               ->default(null);
+//        });
     }
 
     /**
