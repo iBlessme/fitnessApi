@@ -16,9 +16,22 @@ class AbonementController extends Controller
      */
     public function index()
     {
-        $data = Abonement::all();
+        $data = Abonement::with('bonus')->get();
         return response() -> json($data);
 //        return AbonementResourse::collection(Abonement::all());
+    }
+
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+          'name_abonement' => $data['name_abonement'],
+            'cost_abonement' => $data['cost_abonement'],
+            'date_start' => $data['date_start'],
+            'date_finish' => $data['date_finish'],
+            'bonus_programms_id' => $data['bonus_programms_id']
+        ];
+        Abonement::create($dataModel);
+        return response() -> json(['data' => 'Абонемент успешно добавлен', $data['Abonement install']]);
     }
 
     /**

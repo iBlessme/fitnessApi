@@ -19,6 +19,24 @@ class UserClubController extends Controller
         $data = UserClub::all();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'name_user' => $data['name_user'],
+            'surname' => $data['surname'],
+            'thirdname' => $data['thirdname'],
+            'passport_number' => $data['passport_number'],
+            'passport_serial' => $data['passport_serial'],
+            'snils' => $data['snils'],
+            'phone_number' => $data['phone_number'],
+            'login' => $data['login'],
+            'password' => $data['password'],
+            'birth_day' => $data['birth_day'],
+
+        ];
+        UserClub::create($dataModel);
+        return response() -> json(['data' => 'Пользователь успешно добавлен']);
+    }
 
     /**
      * Store a newly created resource in storage.

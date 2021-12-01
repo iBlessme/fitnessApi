@@ -19,6 +19,20 @@ class EducationController extends Controller
         $data = Education::with('worker')->get();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'quailifaction' => $data['quailifaction'],
+            'stage' => $data['stage'],
+            'registration_number' => $data['registration_number'],
+            'serial_number' => $data['serial_number'],
+            'institution' => $data['institution'],
+            'date_ofissue' => $data['date_ofissue'],
+            'workers_id' => $data['workers_id'],
+        ];
+        Education::create($dataModel);
+        return response() -> json(['data' => 'Образование успешно добавлено']);
+    }
 
     /**
      * Store a newly created resource in storage.

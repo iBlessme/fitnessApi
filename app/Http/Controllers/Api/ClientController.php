@@ -19,7 +19,15 @@ class ClientController extends Controller
         $data = Client::with(['abonement', 'userClub'])->get();
         return response() -> json($data);
     }
-
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'abonements_id' => $data['abonements_id'],
+            'user_clubs_id' => $data['user_clubs_id'],
+        ];
+        Client::create($dataModel);
+        return response() -> json(['data' => 'Клиент успешно добавлен']);
+    }
     /**
      * Store a newly created resource in storage.
      *

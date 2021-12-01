@@ -12,6 +12,16 @@ class Education extends Model
 
     protected $table = 'education';
     protected $primaryKey = 'id';
+    public $timestamps = false;
+    protected $fillable = [
+      'quailifaction' ,
+        'stage',
+        'registration_number',
+        'serial_number',
+        'institution',
+        'date_ofissue',
+        'workers_id'
+    ];
 
     public function worker(): BelongsTo
     {

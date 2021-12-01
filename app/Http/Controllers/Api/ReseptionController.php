@@ -16,8 +16,18 @@ class ReseptionController extends Controller
      */
     public function index()
     {
-        $data = Reseption::all();
+        $data = Reseption::with(['sportInventorie', 'worker', 'client'])->get();
         return response() -> json($data);
+    }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'name_hall' => $data['name_hall'],
+            'capacity' => $data['capacity'],
+            'types_of_tranings_id' => $data['types_of_tranings_id']
+        ];
+        Reseption::create($dataModel);
+        return response() -> json(['data' => 'Зал успешно добавлено']);
     }
 
     /**

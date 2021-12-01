@@ -16,10 +16,20 @@ class WorkerController extends Controller
      */
     public function index()
     {
-        $data = Worker::all();
+        $data = Worker::with(['positionWork','userClub'])->get();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'salary' => $data['salary'],
+            'position_works_id' => $data['position_works_id'],
+            'user_clubs_id' => $data['user_clubs_id']
 
+        ];
+        Worker::create($dataModel);
+        return response() -> json(['data' => 'Сотрудник успешно добавлен']);
+    }
     /**
      * Store a newly created resource in storage.
      *

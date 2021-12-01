@@ -21,6 +21,15 @@ class BonusProgrammController extends Controller
         $data = BonusProgramm::all();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'name_programm' => $data['name_programm'],
+            'cost' => $data['cost'],
+        ];
+        BonusProgramm::create($dataModel);
+        return response() -> json(['data' => 'Бонусная система успешно добавлен']);
+    }
 
     /**
      * Store a newly created resource in storage.

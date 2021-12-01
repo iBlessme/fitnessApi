@@ -12,6 +12,11 @@ class Client extends Model
     use HasFactory;
     protected $table = 'clients';
     protected $primaryKey = 'id';
+    public $timestamps = false;
+    protected $fillable = [
+      'abonements_id',
+        'user_clubs_id'
+    ];
     public function abonement(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Abonement::class, 'abonements_id');

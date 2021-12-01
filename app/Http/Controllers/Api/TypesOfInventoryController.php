@@ -19,6 +19,15 @@ class TypesOfInventoryController extends Controller
         $data = TypesOfInventory::all();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'name_inventory' => $data['name_inventory'],
+
+        ];
+        TypesOfInventory::create($dataModel);
+        return response() -> json(['data' => 'Тип инвентаря успешно добавлен']);
+    }
 
     /**
      * Store a newly created resource in storage.

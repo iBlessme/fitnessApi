@@ -16,8 +16,18 @@ class HallsController extends Controller
      */
     public function index()
     {
-        $data = Hall::all();
+        $data = Hall::with('typesOfTraning')->get();
         return response() -> json($data);
+    }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'sport_inventories_id' => $data['sport_inventories_id'],
+            'workers_id' => $data['workers_id'],
+            'clients_id' => $data['clients_id']
+        ];
+        Hall::create($dataModel);
+        return response() -> json(['data' => 'Ресепшн успешно добавлено']);
     }
 
     /**

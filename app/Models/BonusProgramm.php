@@ -9,6 +9,7 @@ class BonusProgramm extends Model
 {
     protected $table = 'bonus_programms';
     protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
         'name_programm',
         'cost'

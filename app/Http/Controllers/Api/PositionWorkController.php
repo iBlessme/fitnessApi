@@ -19,6 +19,15 @@ class PositionWorkController extends Controller
         $data = PositionWork::all();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'name_position' => $data['name_position'],
+
+        ];
+        PositionWork::create($dataModel);
+        return response() -> json(['data' => 'Должность успешно добавлено']);
+    }
 
     /**
      * Store a newly created resource in storage.

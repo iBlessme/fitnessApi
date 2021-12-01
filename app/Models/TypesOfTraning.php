@@ -9,6 +9,7 @@ class TypesOfTraning extends Model
 {
     protected $table = 'types_of_tranings';
     protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
         'name_traning'
     ];

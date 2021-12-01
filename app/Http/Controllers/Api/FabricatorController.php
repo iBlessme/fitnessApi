@@ -19,6 +19,15 @@ class FabricatorController extends Controller
         $data = Fabricator::all();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'name_fabricator' => $data['name_fabricator'],
+            'country' => $data['country']
+        ];
+        Fabricator::create($dataModel);
+        return response() -> json(['data' => 'Фабрика успешно добавлено']);
+    }
 
     /**
      * Store a newly created resource in storage.

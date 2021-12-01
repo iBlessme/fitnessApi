@@ -16,10 +16,19 @@ class SportInventoryController extends Controller
      */
     public function index()
     {
-        $data = SportInventory::all();
+        $data = SportInventory::with(['typesOfInventorie', 'hall', 'fabricator'])->get();
         return response() -> json($data);
     }
-
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'types_of_inventories_id' => $data['types_of_inventories_id'],
+            'halls_id' => $data['halls_id'],
+            'fabricators_id' => $data['fabricators_id']
+        ];
+        SportInventory::create($dataModel);
+        return response() -> json(['data' => 'Спортивный инвентарь успешно добавлен']);
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -9,6 +9,7 @@ class UserClub extends Model
 {
     protected $table = 'user_clubs';
     protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
         'name_user',
         'surname',

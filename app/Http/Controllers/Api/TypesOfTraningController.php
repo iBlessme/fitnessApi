@@ -19,6 +19,15 @@ class TypesOfTraningController extends Controller
         $data = TypesOfTraning::all();
         return response() -> json($data);
     }
+    public function create(Request $request){
+        $data = $request -> all();
+        $dataModel = [
+            'name_traning' => $data['name_traning'],
+
+        ];
+        TypesOfTraning::create($dataModel);
+        return response() -> json(['data' => 'Тип тренировки успешно добавлен']);
+    }
 
     /**
      * Store a newly created resource in storage.

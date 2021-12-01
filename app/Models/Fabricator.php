@@ -9,9 +9,10 @@ class Fabricator extends Model
 {
     protected $table = 'fabricators';
     protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
         'name_fabricator',
-        'cost_country'
+        'country'
     ];
     use HasFactory;
 }
