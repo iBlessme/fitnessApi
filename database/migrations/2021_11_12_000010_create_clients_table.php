@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->foreignId('abonements_id') -> constrained();
             $table->foreignId('user_clubs_id') -> constrained();
 
-            $table->timestamps();
+//            $table->timestamps();
 
 
         });

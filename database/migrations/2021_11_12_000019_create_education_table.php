@@ -24,7 +24,7 @@ class CreateEducationTable extends Migration
 
             $table->foreignId('workers_id') -> constrained();
 
-            $table->timestamps();
+//            $table->timestamps();
 
 
         });

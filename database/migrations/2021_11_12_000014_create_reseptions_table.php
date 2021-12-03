@@ -20,7 +20,7 @@ class CreateReseptionsTable extends Migration
             $table->foreignId('workers_id') -> constrained();
             $table->foreignId('clients_id') -> constrained();
 
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

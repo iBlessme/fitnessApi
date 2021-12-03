@@ -22,7 +22,7 @@ class CreateAbonementsTable extends Migration
 
              $table->foreignId('bonus_programms_id') -> constrained();
 
-            $table->timestamps();
+//            $table->timestamps();
 
 
         });

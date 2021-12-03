@@ -20,14 +20,9 @@ class CreateWorkersTable extends Migration
             $table->foreignId('position_works_id') -> constrained();
             $table->foreignId('user_clubs_id') -> constrained();
 
-            $table->timestamps();
+//            $table->timestamps();
         });
-//        Schema::table('workers', function ($table){
-//           $table->string('api_token', 80)->after('password')
-//               ->unique()
-//               ->nullable()
-//               ->default(null);
-//        });
+
     }
 
     /**

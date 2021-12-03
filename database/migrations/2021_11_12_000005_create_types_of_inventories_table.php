@@ -16,7 +16,7 @@ class CreateTypesOfInventoriesTable extends Migration
         Schema::create('types_of_inventories', function (Blueprint $table) {
             $table->id();
             $table->string('name_inventory', 30);
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

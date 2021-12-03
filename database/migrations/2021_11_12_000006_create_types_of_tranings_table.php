@@ -16,7 +16,7 @@ class CreateTypesOfTraningsTable extends Migration
         Schema::create('types_of_tranings', function (Blueprint $table) {
             $table->id();
             $table->string('name_traning', 30);
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

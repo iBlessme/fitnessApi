@@ -17,7 +17,7 @@ class CreateFabricatorsTable extends Migration
             $table->id();
             $table->string('name_fabricator', 30);
             $table->string('country',30);
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

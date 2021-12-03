@@ -25,7 +25,7 @@ class CreateUserClubsTable extends Migration
             $table->string('login',30);
             $table->string('password',30);
             $table->date('birth_day');
-            $table->timestamps();
+//            $table->timestamps();
         });
 
     }

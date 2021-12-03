@@ -20,7 +20,7 @@ class CreateSportInventoriesTable extends Migration
             $table->foreignId('halls_id') -> constrained();
             $table->foreignId('fabricators_id') -> constrained();
 
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

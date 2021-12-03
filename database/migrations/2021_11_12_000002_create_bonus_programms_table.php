@@ -17,7 +17,7 @@ class CreateBonusProgrammsTable extends Migration
             $table->id();
             $table->string('name_programm', 30);
             $table->string('cost', 1000);
-            $table->timestamps();
+//            $table->timestamps();
         });
     }
 

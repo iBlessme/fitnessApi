@@ -20,7 +20,7 @@ class CreateHallsTable extends Migration
 
             $table->foreignId('types_of_tranings_id') -> constrained();
 
-            $table->timestamps();
+//            $table->timestamps();
 
 
         });
