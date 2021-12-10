@@ -60,7 +60,10 @@ class FabricatorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $fabricator = Fabricator::whereId($id)->update([
+            'name_fabricator' => $request->get('name_fabricator'),
+            'country' => $request->get('country')
+        ]);
     }
 
     /**
@@ -71,6 +74,6 @@ class FabricatorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $fabricator = Fabricator::destroy($id);
     }
 }

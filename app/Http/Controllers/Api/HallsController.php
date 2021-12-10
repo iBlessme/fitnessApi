@@ -22,9 +22,9 @@ class HallsController extends Controller
     public function create(Request $request){
         $data = $request -> all();
         $dataModel = [
-            'sport_inventories_id' => $data['sport_inventories_id'],
-            'workers_id' => $data['workers_id'],
-            'clients_id' => $data['clients_id']
+            'name_hall' => $data['name_hall'],
+            'capacity' => $data['capacity'],
+            'types_of_tranings_id' => $data['types_of_tranings_id']
         ];
         Hall::create($dataModel);
         return response() -> json(['data' => 'Ресепшн успешно добавлено']);
@@ -61,7 +61,13 @@ class HallsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $hall = Hall::whereId($id)->update([
+            'name_hall' => $request->get('name_hall'),
+            'capacity' => $request->get('capacity'),
+            'types_of_tranings_id' => $request->get('types_of_tranings_id')
+
+        ]);
+
     }
 
     /**
@@ -72,6 +78,6 @@ class HallsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $hall = Hall::destroy($id);
     }
 }

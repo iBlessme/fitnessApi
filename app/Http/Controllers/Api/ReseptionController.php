@@ -61,7 +61,11 @@ class ReseptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $reseption = Reseption::whereId($id) -> update([
+            'sport_inventories_id' => $request -> get('sport_inventories_id'),
+            'workers_id' => $request -> get('workers_id'),
+            'clients_id' => $request -> get('clients_id'),
+        ]);
     }
 
     /**
@@ -72,6 +76,6 @@ class ReseptionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reseprion = Reseption::destroy($id);
     }
 }

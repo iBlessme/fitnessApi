@@ -59,7 +59,11 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Client::whereId($id) -> update([
+            'abonements_id' =>$request->get('abonements_id'),
+            'user_clubs_id' =>$request->get('user_clubs_id')
+
+        ]);
     }
 
     /**
@@ -70,6 +74,6 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $client = Client::destroy($id);
     }
 }

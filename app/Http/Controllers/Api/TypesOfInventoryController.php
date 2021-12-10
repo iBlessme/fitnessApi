@@ -60,7 +60,9 @@ class TypesOfInventoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $typesOfInventory = TypesOfInventory::whereId($id) -> update([
+            'name_inventory' => $request -> get('name_inventory')
+        ]);
     }
 
     /**
@@ -71,6 +73,6 @@ class TypesOfInventoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $typesOfInventory = TypesOfInventory::destroy($id);
     }
 }

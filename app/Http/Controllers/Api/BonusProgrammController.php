@@ -62,7 +62,10 @@ class BonusProgrammController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $bonusProgramm = BonusProgramm::whereId($id)->update([
+            'name_programm' => $request->get('name_programm'),
+            'cost' => $request->get('cost')
+        ]);
     }
 
     /**
@@ -73,6 +76,6 @@ class BonusProgrammController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bonusProgramm = BonusProgramm::destroy($id);
     }
 }

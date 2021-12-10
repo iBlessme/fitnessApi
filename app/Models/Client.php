@@ -19,10 +19,14 @@ class Client extends Model
     ];
     public function abonement(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(Abonement::class, 'abonements_id');
+        return $this->belongsTo(Abonement::class, 'abonements_id')->with(['bonus']);
     }
     public function userClub(): BelongsTo
     {
         return $this->belongsTo(UserClub::class, 'user_clubs_id');
+    }
+
+    public function bonus() : BelongsTo {
+        return $this->belongsTo(BonusProgramm::class, 'bonus_programms_id');
     }
 }

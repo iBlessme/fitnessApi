@@ -65,7 +65,13 @@ class AbonementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $abonement = Abonement::whereId($id)->update([
+            'name_abonement' => $request->get('name_abonement'),
+            'cost_abonement' => $request->get('cost_abonement'),
+            'date_start' => $request->get('date_start'),
+            'date_finish' => $request->get('date_finish'),
+            'bonus_programms_id' => $request->get('bonus_programms_id'),
+        ]);
     }
 
     /**
@@ -76,6 +82,6 @@ class AbonementController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $abonement = Abonement::destroy($id);
     }
 }

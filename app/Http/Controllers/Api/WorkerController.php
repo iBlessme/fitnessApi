@@ -61,7 +61,12 @@ class WorkerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $worker = Worker::whereId($id)-> update([
+            'salary' => $request -> get('salary'),
+            'position_works_id' => $request -> get('position_works_id'),
+            'user_clubs_id' => $request -> get('user_clubs_id'),
+
+        ]);
     }
 
     /**
@@ -72,6 +77,6 @@ class WorkerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $worker = Worker::destroy($id);
     }
 }

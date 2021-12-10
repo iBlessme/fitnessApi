@@ -9,6 +9,7 @@ class TypesOfInventory extends Model
 {
     protected $table = 'types_of_inventories';
     protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
         'name_inventory'
     ];

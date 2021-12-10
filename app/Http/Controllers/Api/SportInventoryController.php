@@ -60,7 +60,11 @@ class SportInventoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sportInvetory = SportInventory::whereId($id) -> update([
+            'types_of_inventories_id' => $request -> get('types_of_inventories_id'),
+            'halls_id' => $request -> get('halls_id'),
+            'fabricators_id' => $request -> get('fabricators_id'),
+        ]);
     }
 
     /**
@@ -71,6 +75,6 @@ class SportInventoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sportInvetory = SportInventory::destroy($id);
     }
 }

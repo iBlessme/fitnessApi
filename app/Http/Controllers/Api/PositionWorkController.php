@@ -60,7 +60,9 @@ class PositionWorkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $positionWork = PositionWork::whereId($id)->update([
+            'name_position' => $request -> get('name_position')
+        ]);
     }
 
     /**
@@ -71,6 +73,6 @@ class PositionWorkController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $PositionWork = PositionWork::destroy($id);
     }
 }

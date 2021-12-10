@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\TypesOfTraningResourse;
 use App\Models\TypesOfTraning;
 use Illuminate\Http\Request;
+use Nette\Utils\Type;
 
 class TypesOfTraningController extends Controller
 {
@@ -60,7 +61,9 @@ class TypesOfTraningController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $typesOfTranong = TypesOfTraning::whereId($id)->update([
+            'name_traning' => $request -> get('name_traning')
+        ]);
     }
 
     /**
@@ -71,6 +74,6 @@ class TypesOfTraningController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $typesOfTranong = TypesOfTraning::destroy($id);
     }
 }

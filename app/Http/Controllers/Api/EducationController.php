@@ -65,7 +65,15 @@ class EducationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $education = Education::whereId($id)->update([
+            'quailifaction' => $request->get('quailifaction'),
+            'stage' => $request->get('stage'),
+            'registration_number' => $request->get('registration_number'),
+            'serial_number' => $request->get('serial_number'),
+            'institution' => $request->get('institution'),
+            'date_ofissue' => $request->get('date_ofissue'),
+            'workers_id' => $request->get('workers_id'),
+        ]);
     }
 
     /**
@@ -76,6 +84,6 @@ class EducationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $education = Education::destroy($id);
     }
 }

@@ -25,7 +25,14 @@ class Education extends Model
 
     public function worker(): BelongsTo
     {
-        return $this->BelongsTo(Worker::class, 'workers_id');
+        return $this->BelongsTo(Worker::class, 'workers_id')->with(['positionWork', 'userClub']);
+    }
+    public function positionWork(): BelongsTo
+    {
+        return $this->BelongsTo(PositionWork::class, 'position_works_id');
+    }
+    public function userClub(): BelongsTo{
+        return $this->BelongsTo(UserClub::class, 'user_clubs_id');
     }
     use HasFactory;
 }

@@ -69,7 +69,18 @@ class UserClubController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $userClub = UserClub::whereId($id)->update([
+            'name_user' => $request -> get('name_user'),
+            'surname' => $request -> get('surname'),
+            'thirdname' => $request -> get('thirdname'),
+            'passport_number' => $request -> get('passport_number'),
+            'passport_serial' => $request -> get('passport_serial'),
+            'snils' => $request -> get('snils'),
+            'phone_number' => $request -> get('phone_number'),
+            'login' => $request -> get('login'),
+            'password' => $request -> get('password'),
+            'birth_day' => $request -> get('birth_day')
+        ]);
     }
 
     /**
@@ -80,6 +91,6 @@ class UserClubController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userClub = UserClub::destroy($id);
     }
 }
