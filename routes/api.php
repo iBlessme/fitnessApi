@@ -97,3 +97,5 @@ Route::get('/workers',[ WorkerController::class, 'index']);
 Route::post('/workers', [WorkerController::class, 'create']);
 Route::delete('/workers/{id}', [WorkerController::class, 'destroy']);
 Route::put('/workers/{id}', [WorkerController::class, 'update']);
+
+//sdsda
