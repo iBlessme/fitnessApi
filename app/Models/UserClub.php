@@ -8,7 +8,7 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class UserClub extends Model
+class UserClub extends Authenticatable
 {
     use HasApiTokens,Notifiable;
     protected $table = 'user_clubs';

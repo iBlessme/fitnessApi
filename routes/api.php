@@ -29,9 +29,19 @@ use App\Http\Controllers\Api\AbonementController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/userClub', function (Request $request) {
     return $request->user();
 });
+//Route::group(['namespace' => 'Api'], function () {
+//    Route::group(['namespace' => 'Auth'], function () {
+//        Route::post('register', 'RegisterController');
+//        Route::post('login', 'LoginController');
+//        Route::post('logout', 'LogoutController')->middleware('auth:api');
+//    });
+//});
+Route::post('/login', [\App\Http\Controllers\Api\Auth\LoginController::class]);
+Route::post('/logout', [\App\Http\Controllers\Api\Auth\LogoutController::class]);
+Route::post('/register', [\App\Http\Controllers\Api\Auth\RegisterController::class]);
 
 Route::get('/abonement',[ AbonementController::class, 'index']);
 Route::post('/abonement', [AbonementController::class, 'create']);
@@ -98,4 +108,3 @@ Route::post('/workers', [WorkerController::class, 'create']);
 Route::delete('/workers/{id}', [WorkerController::class, 'destroy']);
 Route::put('/workers/{id}', [WorkerController::class, 'update']);
 
-//sdsda
